@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <h2 class="logo">Employee<span>Hub</span></h2>
+    <button class="btn add-btn" onclick="openAdd()">+ Add Employee</button>
+</header>
+
+<section class="container">
+    <h1>Employee Management System</h1>
+
+    <table id="employeeTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h2 class="grid-title">Employee Grid</h2>
+    <div id="employeeGrid" class="grid"></div>
+</section>
+
+<div class="modal" id="modal">
+    <div class="modal-box pop">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle">Add Employee</h2>
+        <input type="text" id="empId" placeholder="Employee ID">
+        <input type="text" id="empName" placeholder="Full Name">
+        <input type="text" id="empDept" placeholder="Department">
+        <input type="email" id="empEmail" placeholder="Email">
+        <button class="btn save" onclick="saveEmployee()">Save</button>
+    </div>
+</div>
+
+<div class="modal" id="viewModal">
+    <div class="modal-box pop">
+        <span class="close" onclick="closeView()">&times;</span>
+        <h2>Employee Details</h2>
+        <p><b>ID:</b> <span id="vId"></span></p>
+        <p><b>Name:</b> <span id="vName"></span></p>
+        <p><b>Department:</b> <span id="vDept"></span></p>
+        <p><b>Email:</b> <span id="vEmail"></span></p>
+
+        <div class="modal-actions">
+            <button class="btn edit" onclick="editFromView()">Edit</button>
+            <button class="btn delete" onclick="deleteFromView()">Delete</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
